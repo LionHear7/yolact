@@ -45,7 +45,30 @@ Some examples from our base model (33.5 fps on a Titan Xp and 29.8 mAP on COCO's
    ```Shell
    sh data/scripts/COCO_test.sh
    ```
-
+# Installation with pipenv
+- Set up a Python3 environment.
+    ```Shell
+    pip3 install pipenv
+    pipenv --three
+   ```
+- Install [Pytorch](http://pytorch.org/) 1.0.1 (or higher) and TorchVision.
+   ```Shell
+    pipenv run pip3 install torch===1.3.0 torchvision===0.4.1 -f https://download.pytorch.org/whl/torch_stable.html
+    ```
+- Install cython, openCV, PIL 
+    ```Shell
+       pipenv run pip3 install cython
+       pipenv run pip3 install opencv-python
+       pipenv run pip3 install pillow
+    ```
+- Install pycocotools
+   ```Shell
+      pipenv run pip3 install "git+https://github.com/philferriere/cocoapi.git#egg=pycocotools&subdirectory=PythonAPI"
+   ```
+- Install matplotlib
+   ```Shell
+     pipenv run pip3 install matplotlib
+   ```
 
 # Evaluation
 As of April 5th, 2019 here are our latest models along with their FPS on a Titan Xp and mAP on `test-dev`:
